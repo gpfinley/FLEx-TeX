@@ -1,0 +1,45 @@
+\documentclass[10pt,openright]{report}
+
+\usepackage{fontspec}
+\setmainfont{Charis SIL}
+
+\usepackage[papersize={8.5in,11in},
+            text={6.5in,9in},
+            headsep=0.125in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+%\usepackage[letter,center,dvips]{crop}
+%\usepackage{nolbreaks}
+
+%\setlength{\columnsep}{0.3in}
+
+
+\renewcommand{\textsubscript}[1]{$_{#1}$}
+
+%\makeatother
+
+% fancyhdrs stuff
+\pagestyle{fancy}
+\lhead{\textbf{\rightmark}}
+\rhead{\textbf{\leftmark}}
+\chead{\thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+
+\input{all_field_types}
+
+\begin{document}
+
+\begin{multicols}{2}
+\raggedright
+
+\leftskip 0.1in
+\parindent -0.1in
+
+\input{entries}
+
+\end{multicols}
+
+\end{document}
