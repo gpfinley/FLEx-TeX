@@ -40,14 +40,13 @@ You will be asked to locate four files. The first file is your XML output from F
 
 The output of the script will contain at least two LaTeX files:
 
-    all_field_types.tex Contains a custom LaTeX command for each type of dictionary field.
-                This will have to be edited to your formatting preferences.
-    entries.tex     Contains the entries themselves; this can probably stay as it is.
+- all_field_types.tex: Contains a custom LaTeX command for each type of dictionary field. This will have to be edited to your formatting preferences.
+- entries.tex: Contains the entries themselves; this can probably stay as it is.
 
 If you specified a main file at runtime, then this will also be copied to the output folder. The main file will include everything in your dictionary except the entries and the custom commands―so, all header and formatting information, title, etc. The file should also, crucially, contain two lines:
 
-\input{all_field_types}     % In the preamble
-\input{entries}         % Where you want the dictionary content to appear
+    \input{all_field_types}   % In the preamble
+    \input{entries}           % Where you want the dictionary content to appear
 
 An example of a main file is included with FLEx-TeX (“example main file.tex”). When finally compiling the dictionary in LaTeX, you will want to compile the main file, as the others will not compile on their own. If you are using any Unicode characters, be sure to compile under XeLaTeX (included in most LaTeX distributions). And if you are using Unicode and experience any issues at all with characters not showing up properly, check to be sure that all files are saved with UTF-8 encoding. (Notepad under Windows doesn't always do this properly, so if your characters aren't coming out correctly, try a different text editor.)
 
@@ -55,7 +54,7 @@ An example of a main file is included with FLEx-TeX (“example main file.tex”
 
 As indicated above, all_field_types.tex will have to be modified to suit your preferences in formatting the dictionary. Each field type will be given its own custom command. These commands can be edited to specify how each field will appear―for example, in boldface, in smaller font, with a following period or comma, etc.―using standard LaTeX syntax. In this example:
 
-\newcommand{\LexSenseDefinition}[1]{\textbf{#1}}
+    \newcommand{\LexSenseDefinition}[1]{\textbf{#1}}
 
 a command is being defined that takes one argument and represents that argument in boldface; ‘#1’ stands for the argument. If this line is included in all_field_types.tex, then all definitions given in the dictionary will be bold.
 
